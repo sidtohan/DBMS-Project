@@ -5,3 +5,9 @@ Topic:- Oxygen Cylinders/ Ventilator Management System for Covid-19
 
 Progress:-
 -> ER Diagram Uploaded.
+
+
+Group Members:
+Siddhant Tohan - 2020UCM2308
+Jivanshu Popli - 2020UCM2319
+Vansh Kapila - 2020UCM2337
