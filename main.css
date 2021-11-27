@@ -1,11 +1,11 @@
 /* HEADER */
 header {
   width: 100%;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-style: normal;
   font-weight: bold;
-  font-size: 70px;
-  line-height: 105px;
+  font-size: 65px;
+  line-height: 100px;
   color: #6c63ff;
   text-align: center;
 }
@@ -26,15 +26,14 @@ header {
   color: #fff;
   width: 100%;
   background: #6c63ff;
-  gap: 30px;
 }
 
 .about-heading {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 65px !important;
-  line-height: 97px;
+  font-size: 60px;
+  line-height: 90px;
 }
 
 .about-text {
@@ -43,10 +42,53 @@ header {
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  line-height: 50px;
+  line-height: 60px;
   text-align: center;
+  padding: 40px 0;
 }
 
+/* HELP */
+.help {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.help-heading {
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90px;
+  color: #6c63ff;
+  text-align: center;
+  width: 100%;
+}
+
+.help-text-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0px;
+  gap: 50px;
+  width: 100%;
+}
+
+.help-text {
+  font-family: "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  color: #6c63ff;
+}
+
+.o2logo {
+  display: block;
+}
 body {
   padding: 50px 0;
   background: url("./assets/background.png");
