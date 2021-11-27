@@ -238,16 +238,15 @@ body {
     width: 100%;
     height: auto;
   }
-  /* ABOUT */
+  /* ABOUT AND HELP*/
   .about,.help-text-image{
-    padding: 30px 20px;
+    padding: 30px 10px;
   }
-  .about-heading,.help-heading{
+  .about-heading,.help-heading,.begin{
     font-size: 30px;
     line-height: 30px;
   }
   .about-text,.help-text{
-    padding: 20px 0;
     font-size: 20px;
     line-height: 25px;
     text-align: center;
@@ -259,7 +258,26 @@ body {
     width: 80%;
     height: auto;
   }
+
+  /* CALL-TO-ACTION */
+  .call-to-action{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .call-to-action{
+    padding: 30px;
+  }
+
+  .cta-btn{
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+  /* CREDITS */
+  .credits{
+    padding: 0;
+  }
   body{
+    padding: 0;
     gap: 20px;
   }
 
