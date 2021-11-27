@@ -12,8 +12,8 @@ header {
 header > h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 70px;
-  line-height: 105px;
+  font-size: 60px;
+  line-height: 80px;
   color: #6c63ff;
 }
 
@@ -26,14 +26,20 @@ header > h1 {
   background: #6c63ff;
   color: #fff;
 
-  font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 52px;
 
   border: none;
   border-radius: 50px;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.sign-in:hover {
+  box-shadow: 0 0 10px #6c63ff;
 }
 
 /* HERO */
@@ -49,7 +55,7 @@ header > h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 64px 126px;
+  padding: 50px 126px;
   color: #fff;
   width: 100%;
   background: #6c63ff;
@@ -59,8 +65,8 @@ header > h1 {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 55px;
-  line-height: 85px;
+  font-size: 50px;
+  line-height: 80px;
 }
 
 .about-text {
@@ -68,8 +74,8 @@ header > h1 {
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 35px;
-  line-height: 55px;
+  font-size: 30px;
+  line-height: 50px;
   text-align: center;
   padding: 40px 0;
 }
@@ -87,8 +93,8 @@ header > h1 {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 55px;
-  line-height: 85px;
+  font-size: 50px;
+  line-height: 80px;
   color: #6c63ff;
   text-align: center;
   width: 100%;
@@ -108,14 +114,91 @@ header > h1 {
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 35px;
-  line-height: 55px;
+  font-size: 30px;
+  line-height: 50px;
   color: #6c63ff;
 }
 
 .o2logo {
   display: block;
+  height: 300px;
+  width: 300px;
 }
+
+/* CALL-TO-ACTION */
+.call-to-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 100px;
+  background: #6c63ff;
+  width: 100%;
+  gap: 78px;
+}
+
+.begin {
+  text-align: center;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 80px;
+
+  color: #fff;
+}
+
+.cta-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 25px;
+  border: none;
+  background: #ffffff;
+  border-radius: 60px;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  color: #6c63ff;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 10px #fff;
+}
+
+/* CREDITS */
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.credits > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 45px;
+
+  text-align: center;
+  color: #6c63ff;
+}
+
+.credits h2 {
+  text-align: center;
+  margin: 50px;
+}
+/* BODY */
 body {
   padding: 50px 0;
   background: url("./assets/background.png");
@@ -123,7 +206,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 50px;
   width: 100%;
 }
 
@@ -131,4 +214,5 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
