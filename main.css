@@ -1,14 +1,41 @@
 /* HEADER */
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
-  font-family: "Poppins";
+}
+
+header > h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 65px;
-  line-height: 100px;
+  font-size: 70px;
+  line-height: 105px;
   color: #6c63ff;
-  text-align: center;
 }
+
+.sign-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 20px;
+  background: #6c63ff;
+  color: #fff;
+
+  font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 52px;
+
+  border: none;
+  border-radius: 50px;
+}
+
 /* HERO */
 .logo {
   display: block;
@@ -32,17 +59,17 @@ header {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
-  line-height: 90px;
+  font-size: 55px;
+  line-height: 85px;
 }
 
 .about-text {
   width: 80%;
-  font-family: "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 35px;
+  line-height: 55px;
   text-align: center;
   padding: 40px 0;
 }
@@ -60,8 +87,8 @@ header {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
-  line-height: 90px;
+  font-size: 55px;
+  line-height: 85px;
   color: #6c63ff;
   text-align: center;
   width: 100%;
@@ -78,11 +105,11 @@ header {
 }
 
 .help-text {
-  font-family: "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 35px;
+  line-height: 55px;
   color: #6c63ff;
 }
 
