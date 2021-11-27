@@ -1,0 +1,107 @@
+/* HEADER */
+header {
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 65px;
+  line-height: 100px;
+  color: #6c63ff;
+  text-align: center;
+}
+/* HERO */
+.logo {
+  display: block;
+  width: 800px;
+  height: auto;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 126px;
+  color: #fff;
+  width: 100%;
+  background: #6c63ff;
+}
+
+.about-heading {
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90px;
+}
+
+.about-text {
+  width: 80%;
+  font-family: "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* HELP */
+.help {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.help-heading {
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90px;
+  color: #6c63ff;
+  text-align: center;
+  width: 100%;
+}
+
+.help-text-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0px;
+  gap: 50px;
+  width: 100%;
+}
+
+.help-text {
+  font-family: "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+  color: #6c63ff;
+}
+
+.o2logo {
+  display: block;
+}
+body {
+  padding: 50px 0;
+  background: url("./assets/background.png");
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
