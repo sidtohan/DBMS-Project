@@ -59,6 +59,9 @@ header > h1 {
   color: #fff;
   width: 100%;
   background: #6c63ff;
+  gap: 30px;
+
+  padding-bottom: 30px;
 }
 
 .about-heading {
@@ -77,7 +80,6 @@ header > h1 {
   font-size: 30px;
   line-height: 50px;
   text-align: center;
-  padding: 40px 0;
 }
 
 /* HELP */
@@ -87,6 +89,7 @@ header > h1 {
   justify-content: space-between;
   align-items: center;
   width: 80%;
+  gap: 30px;
 }
 
 .help-heading {
@@ -105,7 +108,6 @@ header > h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 60px 0px;
   gap: 50px;
   width: 100%;
 }
@@ -215,4 +217,51 @@ body {
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+/* MEDIA-QUERIES */
+@media screen and (max-width: 414px) {
+  /* HEADER */
+  header{
+    padding: 0 20px;
+  }
+  header>h1{
+    font-size: 30px;
+  }
+
+  .sign-in{
+    font-size: 20px;
+    padding: 10px;
+    line-height: 30px;
+  }
+  .logo{
+    width: 100%;
+    height: auto;
+  }
+  /* ABOUT */
+  .about,.help-text-image{
+    padding: 30px 20px;
+  }
+  .about-heading,.help-heading{
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .about-text,.help-text{
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .help-text-image{
+    flex-direction: column-reverse;
+  }
+  .o2logo{
+    width: 80%;
+    height: auto;
+  }
+  body{
+    gap: 20px;
+  }
+
+
 }
