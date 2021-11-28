@@ -45,7 +45,7 @@ header > h1 {
 /* HERO */
 .logo {
   display: block;
-  width: 800px;
+  width: 80%;
   height: auto;
 }
 
@@ -70,6 +70,7 @@ header > h1 {
   font-weight: bold;
   font-size: 50px;
   line-height: 80px;
+  text-align: center;
 }
 
 .about-text {
@@ -200,10 +201,11 @@ header > h1 {
   text-align: center;
   margin: 50px;
 }
+
 /* BODY */
 body {
   padding: 50px 0;
-  background: url("./assets/background.png");
+  background-color: white;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
@@ -220,66 +222,64 @@ body {
 }
 
 /* MEDIA-QUERIES */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 760px) {
   /* HEADER */
-  header{
+  header {
     padding: 0 20px;
   }
-  header>h1{
+  header > h1 {
     font-size: 30px;
   }
 
-  .sign-in{
+  .sign-in {
     font-size: 20px;
     padding: 10px;
     line-height: 30px;
   }
-  .logo{
-    width: 100%;
-    height: auto;
-  }
   /* ABOUT AND HELP*/
-  .about,.help-text-image{
+  .about,
+  .help-text-image {
     padding: 30px 10px;
   }
-  .about-heading,.help-heading,.begin{
+  .about-heading,
+  .help-heading,
+  .begin {
     font-size: 30px;
     line-height: 30px;
   }
-  .about-text,.help-text{
+  .about-text,
+  .help-text {
     font-size: 20px;
     line-height: 25px;
     text-align: center;
   }
-  .help-text-image{
+  .help-text-image {
     flex-direction: column-reverse;
   }
-  .o2logo{
-    width: 80%;
+  .o2logo {
+    width: 60%;
     height: auto;
   }
 
   /* CALL-TO-ACTION */
-  .call-to-action{
+  .call-to-action {
     flex-direction: column;
     gap: 20px;
   }
-  .call-to-action{
+  .call-to-action {
     padding: 30px;
   }
 
-  .cta-btn{
+  .cta-btn {
     font-size: 20px;
     padding: 5px 10px;
   }
   /* CREDITS */
-  .credits{
+  .credits {
     padding: 0;
   }
-  body{
+  body {
     padding: 0;
     gap: 20px;
   }
-
-
 }
