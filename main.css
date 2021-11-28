@@ -39,13 +39,13 @@ header > h1 {
 }
 
 .sign-in:hover {
-  box-shadow: 0 0 10px #6c63ff;
+  box-shadow: 0 0 15px #6c63ff;
 }
 
 /* HERO */
 .logo {
   display: block;
-  width: 80%;
+  width: 70%;
   height: auto;
 }
 
@@ -59,9 +59,6 @@ header > h1 {
   color: #fff;
   width: 100%;
   background: #6c63ff;
-  gap: 30px;
-
-  padding-bottom: 30px;
 }
 
 .about-heading {
@@ -124,8 +121,8 @@ header > h1 {
 
 .o2logo {
   display: block;
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
 }
 
 /* CALL-TO-ACTION */
@@ -171,7 +168,7 @@ header > h1 {
 }
 
 .cta-btn:hover {
-  box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 15px #fff;
 }
 
 /* CREDITS */
@@ -219,6 +216,9 @@ body {
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+a{
+  text-decoration: none !important;
 }
 
 /* MEDIA-QUERIES */
