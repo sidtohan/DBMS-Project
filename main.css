@@ -241,9 +241,12 @@ html{
     line-height: 30px;
   }
   /* ABOUT AND HELP*/
-  .about,
-  .help-text-image {
+  .about,.help-text-image{
     padding: 30px 10px;
+    gap: 30px;
+  }
+  .help-text-image{
+    padding: 0;
   }
   .about-heading,
   .help-heading,
