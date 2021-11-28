@@ -221,6 +221,14 @@ a{
   text-decoration: none !important;
 }
 
+html::-webkit-scrollbar{
+  display: none;
+}
+html{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* MEDIA-QUERIES */
 @media screen and (max-width: 760px) {
   /* HEADER */
