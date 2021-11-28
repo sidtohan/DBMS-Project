@@ -204,7 +204,7 @@ body {
   align-items: center;
   gap: 50px;
   width: 100%;
-  font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
@@ -213,14 +213,14 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-a{
+a {
   text-decoration: none !important;
 }
 
-html::-webkit-scrollbar{
+html::-webkit-scrollbar {
   display: none;
 }
-html{
+html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -240,12 +240,17 @@ html{
     padding: 10px;
     line-height: 30px;
   }
+  .logo {
+    width: 95%;
+    height: 300px;
+  }
   /* ABOUT AND HELP*/
-  .about,.help-text-image{
+  .about,
+  .help-text-image {
     padding: 30px 10px;
     gap: 30px;
   }
-  .help-text-image{
+  .help-text-image {
     padding: 0;
   }
   .about-heading,
@@ -264,7 +269,7 @@ html{
     flex-direction: column-reverse;
   }
   .o2logo {
-    width: 60%;
+    width: min(250px,60%);
     height: auto;
   }
 
@@ -288,5 +293,13 @@ html{
   body {
     padding: 0;
     gap: 20px;
+  }
+  .credits h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+  .credits > ul{
+    font-size: 25px;
+    line-height: 40px;
   }
 }
