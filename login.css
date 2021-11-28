@@ -1,0 +1,47 @@
+/* LOGIN */
+.login-logo {
+  width: 400px;
+  height: auto;
+}
+
+.login-menu {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.login-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+}
+
+.login-card {
+  background-color: #6c63ff;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 60px;
+  height: 250px;
+  border-radius: 40px;
+  transition: all 0.15s ease-in-out;
+}
+
+.card-logo{
+  width: 110px;
+  height: auto;
+}
+
+.login-card:hover{
+  box-shadow: 0 0 15px #6c63ff;
+}
+

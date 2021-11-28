@@ -5,7 +5,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
 }
 
@@ -62,7 +61,6 @@ header > h1 {
 }
 
 .about-heading {
-  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 50px;
@@ -91,7 +89,6 @@ header > h1 {
 }
 
 .help-heading {
-  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 50px;
@@ -139,7 +136,6 @@ header > h1 {
 
 .begin {
   text-align: center;
-  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 50px;
@@ -184,7 +180,6 @@ header > h1 {
   list-style: none;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
@@ -209,6 +204,7 @@ body {
   align-items: center;
   gap: 50px;
   width: 100%;
+  font-family: "Poppins",Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
