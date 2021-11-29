@@ -9,10 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@400;700&family=Raleway:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@400;500;700&family=Raleway:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="form.css">
+    <script src="./form.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,22 +22,24 @@
       <a href="./index.html"><button class="sign-in">Home</button></a>
     </header>
     <div class="login-menu">
-      <img class="login-logo" src="./assets/login-logo.svg" />
+      <div class="login-logo-holder">
+        <img class="login-logo" src="./assets/login-logo.svg" />
+      </div>
       <div class="login-options">
-        <div class="login-card">
+        <div class="login-card doctor">
           <img src="./assets/doctor.svg" alt="doctor" class="card-logo" />
           Doctor
         </div>
-        <div class="login-card">
+        <div class="login-card patient">
           <img src="./assets/patient.svg" alt="patient" class="card-logo" />
           Patient
         </div>
-        <div class="login-card">
-          <img src="./assets/hospital.svg" alt="patient" class="card-logo" />
+        <div class="login-card hospital">
+          <img src="./assets/hospital.svg" alt="hospital" class="card-logo" />
           Hospital
         </div>
-        <div class="login-card">
-          <img src="./assets/o2-card.svg" alt="patient" class="card-logo" />
+        <div class="login-card supplier">
+          <img src="./assets/o2-card.svg" alt="supplier" class="card-logo" />
           Supplier
         </div>
       </div>
