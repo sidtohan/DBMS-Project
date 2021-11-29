@@ -270,7 +270,9 @@ html {
     width: min(250px, 60%);
     height: auto;
   }
-
+  .help{
+    gap: 30px;
+  }
   /* CALL-TO-ACTION */
   .call-to-action {
     flex-direction: column;

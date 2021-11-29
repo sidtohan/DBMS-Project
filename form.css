@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 2px;
+  border-radius: 20px;
 }
-
 .login-form {
   display: flex;
   flex-direction: column;
@@ -24,27 +28,26 @@ input[type="text"],
 .login-form > button {
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
-  padding: 10px 20px;
+  padding: 10px 0;
   border: none;
   font-weight: 500;
+  width: 250px;
 }
 
-*::placeholder{
+*::placeholder {
   padding: 0;
 }
 
 input[type="text"] {
-  box-shadow: 0 0 3px #000;
-  border-radius: 30px;
-  color: #6c63ff;
+  border-bottom: 2px solid #b1abab;
 }
 
 input[type="text"]:focus {
   outline: 1px #6c63ff;
 }
 
-input[type="text"]:focus::placeholder{
-  color:transparent;
+input[type="text"]:focus::placeholder {
+  color: transparent;
 }
 
 .hide-pls {
@@ -52,8 +55,28 @@ input[type="text"]:focus::placeholder{
 }
 
 .login-form > button {
-  padding: 20px;
+  padding: 15px 0px;
   background: #6c63ff;
   color: white;
   border-radius: 50px;
+  width: 80px;
+  align-self: flex-end;
+}
+
+.login-form > button > img{
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* INPUT HEADINGS */
+.name-heading,
+.id-heading {
+  color: #757272;
+}
+
+
+.login-form > button:hover > img{
+  transform: translateX(5px);
 }
