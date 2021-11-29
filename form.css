@@ -1,0 +1,59 @@
+.login-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-heading {
+  color: #6c63ff;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+/* INPUT ELEMENT AND BUTTON  */
+input[type="text"],
+*::placeholder,
+.login-form > button {
+  font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: none;
+  font-weight: 500;
+}
+
+*::placeholder{
+  padding: 0;
+}
+
+input[type="text"] {
+  box-shadow: 0 0 3px #000;
+  border-radius: 30px;
+  color: #6c63ff;
+}
+
+input[type="text"]:focus {
+  outline: 1px #6c63ff;
+}
+
+input[type="text"]:focus::placeholder{
+  color:transparent;
+}
+
+.hide-pls {
+  display: none;
+}
+
+.login-form > button {
+  padding: 20px;
+  background: #6c63ff;
+  color: white;
+  border-radius: 50px;
+}
