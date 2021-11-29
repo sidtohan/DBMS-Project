@@ -11,7 +11,7 @@ header {
 header > h1 {
   font-style: normal;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 80px;
   color: #6c63ff;
 }
@@ -21,19 +21,16 @@ header > h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 9px 20px;
+  padding: 0px 20px;
   background: #6c63ff;
   color: #fff;
-
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 52px;
-
   border: none;
   border-radius: 50px;
-
   transition: all 0.15s ease-in-out;
 }
 
@@ -63,7 +60,7 @@ header > h1 {
 .about-heading {
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 45px;
   line-height: 80px;
   text-align: center;
 }
@@ -73,7 +70,7 @@ header > h1 {
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 50px;
   text-align: center;
 }
@@ -91,7 +88,7 @@ header > h1 {
 .help-heading {
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 45px;
   line-height: 80px;
   color: #6c63ff;
   text-align: center;
@@ -111,7 +108,7 @@ header > h1 {
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 50px;
   color: #6c63ff;
 }
@@ -138,7 +135,7 @@ header > h1 {
   text-align: center;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 45px;
   line-height: 80px;
 
   color: #fff;
@@ -149,14 +146,14 @@ header > h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 19px 25px;
+  padding: 10px 25px;
   border: none;
   background: #ffffff;
   border-radius: 60px;
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 40px;
   color: #6c63ff;
 
@@ -269,7 +266,7 @@ html {
     flex-direction: column-reverse;
   }
   .o2logo {
-    width: min(250px,60%);
+    width: min(250px, 60%);
     height: auto;
   }
 
@@ -298,7 +295,7 @@ html {
     font-size: 30px;
     margin: 0;
   }
-  .credits > ul{
+  .credits > ul {
     font-size: 25px;
     line-height: 40px;
   }
