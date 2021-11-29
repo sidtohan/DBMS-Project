@@ -2,10 +2,10 @@ const formHandler = () => {
   const loginOptions = document.querySelector(".login-options");
   const generateForm = (type) => {
     const loginForm = document.createElement("form");
-
     const idDiv = document.createElement("div");
     const idHeading = document.createElement("h3");
     const id = document.createElement("input");
+
     idHeading.textContent = "ID";
     idHeading.classList.add("id-heading");
     id.type = "text";
@@ -50,6 +50,8 @@ const formHandler = () => {
     loginForm.appendChild(idDiv);
     loginForm.appendChild(nameDiv);
     loginForm.appendChild(submitButton);
+    loginForm.action = "auth.php";
+    loginForm.method = "POST";
     return loginForm;
   };
 
