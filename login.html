@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@400;500;700&family=Raleway:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="form.css">
-    <script src="./form.js" defer></script>
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/login.css" />
+    <link rel="stylesheet" href="./stylesheets/form.css" />
+    <script src="./scripts/form.js" defer></script>
   </head>
   <body>
+    <div id="particles-js"></div>
     <header>
       <h1>Login</h1>
       <a href="./index.html"><button class="sign-in">Home</button></a>
@@ -44,5 +45,11 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles.json", function () {
+        console.log("callback - particles-js config loaded");
+      });
+    </script>
   </body>
 </html>
