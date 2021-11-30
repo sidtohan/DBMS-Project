@@ -43,6 +43,8 @@ header > h1 {
   display: block;
   width: 60%;
   height: auto;
+  transform: translateX(-100%);
+  animation: slide-in 0.5s ease-in-out forwards;
 }
 
 /* ABOUT */
@@ -93,7 +95,7 @@ header > h1 {
   border: 1px solid #aaaaaa;
   box-shadow: 0 0 2px black;
 
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   width: min(900px, 90%);
 }
@@ -186,10 +188,10 @@ header > h1 {
   padding: 40px;
 
   height: 500px;
-  width: 510px;
+  width: min(510px,90%);
 
   border: 1px solid #aaaaaa;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
 }
 
@@ -299,6 +301,7 @@ html {
   }
   .help {
     gap: 30px;
+    padding: 50px;
   }
   /* CALL-TO-ACTION */
   .call-to-action {
@@ -328,5 +331,28 @@ html {
   .credits > ul {
     font-size: 25px;
     line-height: 40px;
+  }
+}
+
+
+/* ANIMATION */
+.about,.help,.credits,.call-to-action{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.visible{
+  opacity: 1;
+}
+@keyframes slide-in {
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50%{
+    transform: translateX(10%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0);
   }
 }
