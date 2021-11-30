@@ -37,10 +37,10 @@
   // Checking the number of rows here
   $count = mysqli_num_rows($result);
   if($count == 1){
-    echo "Login Successful <br>";
+    if($type == "patient"){
+      header("Location: ./login-pages/login-form-patient.html");
+    }
   } else{
     echo "Login Failed <br>";
   }
-
-  
 ?>

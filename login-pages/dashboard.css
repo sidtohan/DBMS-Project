@@ -1,0 +1,58 @@
+/* USER NAVIGATION  */
+.user-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 30%;
+  background-color: #6c63ff;
+  color: #fff;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.profile-logo {
+  display: block;
+  width: 200px;
+}
+
+.user-choices{
+  font-weight: 500;
+  font-size: 25px;  
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-choices > li{
+  padding: 10px;
+}
+
+.user-choices button{
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #5d55fd;
+}
+
+/* BODY  */
+body {
+  font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
