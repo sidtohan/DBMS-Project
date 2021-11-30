@@ -1,7 +1,7 @@
 {
   "particles":{
     "number":{
-      "value": 20
+      "value": 10
     },
     "color":{
       "value":"#ffffff"
@@ -18,7 +18,7 @@
       "enable": true,
       "distance": 300,
       "color": "#6c63ff",
-      "opacity": 0.4,
+      "opacity": 1,
       "width": 1.5
     },
     "size":{
