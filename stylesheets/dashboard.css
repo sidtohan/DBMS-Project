@@ -36,6 +36,7 @@
 }
 
 .user-choices button {
+  cursor: pointer;
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
   font-weight: 700;
@@ -69,6 +70,41 @@
   text-align: center;
   letter-spacing: 0.1em;
 }
+
+/* PROFILE */
+.user-display-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  color: black;
+}
+
+.user-display-profile > h2{
+  font-size: 45px;
+}
+
+.user-profile-data{
+  display: flex;
+}
+
+.attributes{
+  width: 200px;
+}
+
+.detail,.attribute{
+  color:rgb(48, 47, 47);
+  font-size: 25px;
+  padding: 10px 0;
+  font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid rgb(48, 47, 47);
+}
+
+.attribute{
+  color: black;
+  font-weight: 700;
+}
+
 
 /* BODY  */
 body {

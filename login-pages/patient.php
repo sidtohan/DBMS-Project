@@ -10,7 +10,10 @@
   $row = mysqli_fetch_assoc($result);
 
   $name = $row['PFIRSTNAME'];
+  $phone = $row['PPHONE'];
+  $address = $row['PADDRESS'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,7 @@
     <link rel="stylesheet" href="../stylesheets/dashboard.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Raleway:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Raleway:wght@500;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -46,4 +49,5 @@
     </div>
   </body>
   <script src="../scripts/logout.js"></script>
+  <script src="../scripts/patient.js"></script>
 </html>
