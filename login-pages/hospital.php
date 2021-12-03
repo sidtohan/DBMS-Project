@@ -5,11 +5,13 @@
     header("location: ../login.html");
   }
   $id = $_SESSION['unique-id'];
-  $sql = "SELECT * FROM `dbms_project`.`patient` WHERE PID = $id";
+  $sql = "SELECT * FROM `dbms-project`.`Hospital` WHERE HID = $id";
   $result = $link -> query($sql);
   $row = mysqli_fetch_assoc($result);
 
-  $name = $row['PFirstName'];
+  $name = $row['HNAME'];
+  $phone = $row['H_LANDLINE_NO'];
+  $address = $row['HADDRESS'];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patient-Login</title>
+    <title>Hospital-Login</title>
     <link rel="stylesheet" href="../stylesheets/dashboard.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,8 +38,9 @@
       </div>
       <ul class="user-choices">
         <li class="nav-option profile">Profile</li>
-        <li class="nav-option equipment">Equipment</li>
-        <li class="nav-option reports">Reports</li>
+        <li class="nav-option equipment">Patients</li>
+        <li class="nav-option reports">Doctors</li>
+        <li class="nav-option supplier">Suppliers</li>
         <li class="nav-option log-out"><button>Log Out</button></li>
       </ul>
     </nav>
