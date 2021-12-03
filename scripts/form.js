@@ -51,20 +51,26 @@ const formHandler = () => {
     loginForm.appendChild(nameDiv);
     loginForm.appendChild(submitButton);
     loginForm.method = "POST";
-    loginForm.onsubmit = async function (e){
+    loginForm.onsubmit = async function (e) {
       e.preventDefault();
       const formData = new FormData(loginForm);
       const response = await fetch("auth.php", {
         body: formData,
-        method:"POST",
-      })
+        method: "POST",
+      });
       const dat = await response.text();
-      if(dat != "success"){
+      if (dat != "success") {
         console.log(dat);
-      } else{
-        location.href = "./login-pages/patient.php";
+      } else {
+        if (type == "patient") {
+          location.href = "./login-pages/patient.php";
+        } else if (type == "hospital") {
+          location.href = "./login-pages/hospital.php";
+        } else{
+          location.href = "login.html";
+        }
       }
-    }
+    };
     return loginForm;
   };
 

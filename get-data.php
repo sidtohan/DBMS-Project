@@ -7,15 +7,15 @@
   $type = json_decode($json)->type;
   
   if($type == "patient"){
-    $sql = "SELECT * FROM `dbms-project`.`Patient` WHERE 
+    $sql = "SELECT * FROM `dbms_project`.`patient` WHERE 
     PID = $id";
     $result = $link -> query($sql);
     $row = mysqli_fetch_assoc($result);
-    $fname = $row['PFIRSTNAME'];
-    $mname = $row['PMIDDLENAME'];
-    $lname = $row['PLASTNAME'];
-    $address = $row['PADDRESS'];
-    $phone = $row["PPHONE"];
+    $fname = $row['PFirstName'];
+    $mname = $row['PMiddleName'];
+    $lname = $row['PLastName'];
+    $address = $row['PAddress'];
+    $phone = $row["PPhone"];
     
     $response = array(
       "fname" => $fname,
@@ -24,7 +24,20 @@
       "address" => $address,
       "phone" => $phone
     );
-    echo json_encode($response);
-  }
+  } else if($type == "hospital"){
+    $sql = "SELECT * FROM `dbms_project`.`Hospital` WHERE 
+    HID = $id";
+    $result = $link -> query($sql);
+    $row = mysqli_fetch_assoc($result);
+    $name = $row['HNAME'];
+    $address = $row['HADDRESS'];
+    $phone = $row['H_LANDLINE_NO'];
 
+    $response = array(
+      "name" => $name,
+      "address" => $address, 
+      "phone" => $phone
+    );
+  }
+  echo json_encode($response);
 ?>
