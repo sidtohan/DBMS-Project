@@ -1,4 +1,10 @@
 /* USER NAVIGATION  */
+.name{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
 .user-navigation {
   display: flex;
   flex-direction: column;
@@ -15,28 +21,53 @@
   width: 200px;
 }
 
-.user-choices{
+.user-choices {
   font-weight: 500;
-  font-size: 25px;  
+  font-size: 25px;
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
-.user-choices > li{
+.nav-option{
   padding: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.user-choices button{
+.user-choices button {
   font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
   font-weight: 700;
-  
+
   padding: 10px;
   border-radius: 30px;
   border: none;
   background: white;
   color: #5d55fd;
+}
+
+/* USER DISPLAY  */
+.user-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #584eff;
+  width: 70%;
+}
+
+.display-heading {
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.display-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.1em;
 }
 
 /* BODY  */

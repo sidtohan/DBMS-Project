@@ -50,8 +50,21 @@ const formHandler = () => {
     loginForm.appendChild(idDiv);
     loginForm.appendChild(nameDiv);
     loginForm.appendChild(submitButton);
-    loginForm.action = "auth.php";
     loginForm.method = "POST";
+    loginForm.onsubmit = async function (e){
+      e.preventDefault();
+      const formData = new FormData(loginForm);
+      const response = await fetch("auth.php", {
+        body: formData,
+        method:"POST",
+      })
+      const dat = await response.text();
+      if(dat != "success"){
+        console.log(dat);
+      } else{
+        location.href = "./login-pages/patient.php";
+      }
+    }
     return loginForm;
   };
 
