@@ -5,7 +5,7 @@
     header("location: ../login.html");
   }
   $id = $_SESSION['unique-id'];
-  $sql = "SELECT * FROM `dbms_project`.`patient` WHERE PID = $id";
+  $sql = "SELECT * FROM patient WHERE PID = $id";
   $result = $link -> query($sql);
   $row = mysqli_fetch_assoc($result);
 

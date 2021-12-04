@@ -64,8 +64,8 @@ const formHandler = () => {
       } else {
         if (type == "patient") {
           location.href = "./login-pages/patient.php";
-        } else if (type == "hospital") {
-          location.href = "./login-pages/hospital.php";
+        } else if (type == "doctor") {
+          location.href = "./login-pages/doctor.php";
         } else{
           location.href = "login.html";
         }
