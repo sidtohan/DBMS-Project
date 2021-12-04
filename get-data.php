@@ -7,7 +7,7 @@
   $type = json_decode($json)->type;
   
   if($type == "patient"){
-    $sql = "SELECT * FROM `dbms_project`.`patient` WHERE 
+    $sql = "SELECT * FROM $type WHERE 
     PID = $id";
     $result = $link -> query($sql);
     $row = mysqli_fetch_assoc($result);
@@ -24,20 +24,24 @@
       "address" => $address,
       "phone" => $phone
     );
-  } else if($type == "hospital"){
-    $sql = "SELECT * FROM `dbms_project`.`Hospital` WHERE 
-    HID = $id";
+  } else if($type == "doctor"){
+    $sql = "SELECT * FROM $type WHERE 
+    DID = $id";
     $result = $link -> query($sql);
     $row = mysqli_fetch_assoc($result);
-    $name = $row['HNAME'];
-    $address = $row['HADDRESS'];
-    $phone = $row['H_LANDLINE_NO'];
+    $fname = $row['DFirstName'];
+    $lname = $row['DLastName'];
+    $experience = $row['Experience'];
 
     $response = array(
-      "name" => $name,
-      "address" => $address, 
-      "phone" => $phone
+      "fname" => $fname,
+      "lname" => $lname,
+      "experience" => $experience
     );
+  } else if($type == "equip"){
+    $sql = "SELECT * FROM medical_equipments WHERE PID = $id";
+    $result = $link -> query($sql);
+    $response = mysqli_fetch_all($result,MYSQLI_ASSOC);
   }
   echo json_encode($response);
 ?>

@@ -10,17 +10,17 @@
   else{
     $name[0] = strtoupper($name[0]);
     if($type == "patient"){
-      $sql = "SELECT * FROM `dbms_project`.`$type` WHERE 
-      PID = $id";
+      $sql = "SELECT * FROM $type WHERE 
+      PID = $id AND PFirstName = '$name'";
     } else if($type == "doctor"){
-      $sql = "SELECT * FROM `dbms_project`.`$type` WHERE 
-      DID = $id";
+      $sql = "SELECT * FROM $type WHERE 
+      DID = $id AND DFirstName = '$name'";
     } else if($type == "supplier"){
-      $sql = "SELECT * FROM `dbms_project`.`$type` WHERE 
-      SID = $id";
+      $sql = "SELECT * FROM $type WHERE 
+      SID = $id and SName = '$name'";
     } else{
-      $sql = "SELECT * FROM `dbms_project`.`$type` WHERE 
-      HID = $id";
+      $sql = "SELECT * FROM $type WHERE 
+      HID = $id and HName = '$name'";
     }
 
     // running the query and storing the result

@@ -1,5 +1,5 @@
 /* USER NAVIGATION  */
-.name{
+.name {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -29,7 +29,7 @@
   flex-direction: column;
 }
 
-.nav-option{
+.nav-option {
   padding: 10px;
   text-align: center;
   cursor: pointer;
@@ -72,7 +72,7 @@
 }
 
 /* PROFILE */
-.user-display-profile{
+.user-display-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,31 +80,41 @@
   color: black;
 }
 
-.user-display-profile > h2{
+.user-display-profile > h2 {
   font-size: 45px;
 }
 
-.user-profile-data{
+.user-profile-data {
   display: flex;
 }
 
-.attributes{
+.attributes {
   width: 200px;
 }
 
-.detail,.attribute{
-  color:rgb(48, 47, 47);
+.detail,
+.attribute {
+  color: rgb(48, 47, 47);
   font-size: 25px;
   padding: 10px 0;
   font-family: "Raleway", Verdana, Geneva, Tahoma, sans-serif;
   border-bottom: 1px solid rgb(48, 47, 47);
 }
 
-.attribute{
+.attribute {
   color: black;
   font-weight: 700;
 }
 
+/* EQUIPMENT  */
+.equip.attributes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.equipment-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 /* BODY  */
 body {
