@@ -58,7 +58,7 @@
   width: 70%;
 }
 
-.display-heading {
+.display-heading,.equip-heading {
   font-weight: 700;
   font-size: 60px;
 }
@@ -72,7 +72,7 @@
 }
 
 /* PROFILE */
-.user-display-profile {
+.user-display-data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,13 +107,19 @@
 }
 
 /* EQUIPMENT  */
-.equip.attributes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+th,
+td {
+  border: 1px solid black;
 }
-.equipment-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+table {
+  color: black;
+  font-size: 20px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td,th{
+  padding: 10px;
 }
 
 /* BODY  */
