@@ -8,8 +8,8 @@ const displayManipulation = (() => {
       const phone = data["phone"];
       const address = data["address"];
       _display.innerHTML = `
-      <div class='user-display-profile'>
-        <h2>PROFILE</h2>
+      <div class='user-display-data'>
+        <h2 class="display-heading">PROFILE</h2>
         <div class='user-profile-data'>
           <div class='attributes'>
             <div class='attribute'>Name</div>
@@ -26,32 +26,29 @@ const displayManipulation = (() => {
       `;
     } else if (type == "equip") {
       _display.innerHTML = `
-      <div class='user-display-equipment'>
-        <h2>EQUIPMENT</h2>
-        <div class='user-equipment-data'>
-          <div class='attributes equip'>
-            <div class='attribute'>EQID</div>
-            <div class='attribute'>Category</div>
-          </div>
-          <div class="equipment-details">
-          </div>
-        </div>
+      <div class='user-display-data'>
+        <h2 class="display-heading">EQUIPMENT</h2>
+        <table class='user-data'>
+          <tr>
+            <th>EQID</th>
+            <th>Category</th>
+          </tr>
+        </table>
       </div>`;
-      const equipmentDetails = _display.querySelector(".equipment-details");
+      const equipmentDetails = _display.querySelector(".user-data");
       data.forEach((element) => {
+        const row = document.createElement("tr");
         const eqId = element["EQID"];
         const category = element["EQCategory"];
+        const eqData = document.createElement("td");
+        const categoryData = document.createElement("td");
         
-        const idDiv = document.createElement("div");
-        idDiv.classList.add("equipment");
-        idDiv.textContent = eqId;
+        eqData.textContent = eqId;
+        categoryData.textContent = category;
+        row.appendChild(eqData);
+        row.appendChild(categoryData);
 
-        const categoryDiv = document.createElement("div");
-        categoryDiv.classList.add("equipment");
-        categoryDiv.textContent = category;
-
-        equipmentDetails.appendChild(idDiv);
-        equipmentDetails.append(categoryDiv);
+        equipmentDetails.appendChild(row);
       });
     }
   };
