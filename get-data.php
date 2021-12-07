@@ -167,6 +167,33 @@
       "supply-oxygen" => $response3,
       "supply-life-support" => $response4
     );
+  } else if($type = "hospital-list"){
+    // 1 those hospital having ventilators
+    $sql = "select distinct(HOSPITAL_NAME)
+    from hospital,supplier,supplier_supplies,medical_equipments 
+    where hospital.hid = supplier.hid and 
+    supplier.sid = supplier_supplies.sid and 
+    supplier_supplies.eqid = medical_equipments.eqid and
+    medical_equipments.eqcategory=\"VENTILATOR\""; 
+    $result = $link -> query($sql);
+    $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+    // 2 count of hospitals having life support
+    $sql = "SELECT COUNT(hospital.HID) AS COUNT_HOSPITAL
+    FROM hospital,supplier,supplier_supplies,medical_equipments 
+    WHERE supplier.SID = supplier_supplies.SID AND 
+    medical_equipments.EQID = supplier_supplies.EQID 
+    AND hospital.HID = supplier.HID
+    AND EQCATEGORY = 'LIFE SUPPORT';";
+    $result = $link -> query($sql);
+    $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+    $response = array(
+      "hospital-ventilator" => $response1,
+      "hospital-life-support" => $response2
+    );
   }
   echo json_encode($response);
 ?>

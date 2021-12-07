@@ -65,7 +65,8 @@
   align-items: center;
   padding: 25px;
   gap: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
 }
 

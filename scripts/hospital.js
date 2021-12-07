@@ -26,6 +26,10 @@ const displayManipulation = (() => {
       heading.textContent = "Suppling oxygen cylinders";
     } else if (data == "supply-life-support") {
       heading.textContent = "Supplying life support";
+    } else if (data == "hospital-ventilator") {
+      heading.textContent = "Hospitals having ventilators";
+    } else if (data == "hospital-life-support") {
+      heading.textContent = "Count of hospitals having life support";
     }
     return heading;
   };
@@ -191,6 +195,38 @@ const displayManipulation = (() => {
           covidTable.appendChild(row);
         });
       }
+    } else if (type == "hospital") {
+      if (subType == "hospital-ventilator") {
+        covidTable.innerHTML = `
+      <tr>
+        <th> Hospital Name </th>
+      </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const nameData = element["HOSPITAL_NAME"];
+
+          const name = document.createElement("td");
+          name.textContent = nameData;
+
+          row.appendChild(name);
+          covidTable.appendChild(row);
+        });
+      } else if (subType == "hospital-life-support") {
+        covidTable.innerHTML = `
+      <tr>
+        <th> Count Of Hospitals </th>
+      </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const countData = element["COUNT_HOSPITAL"];
+
+          const count = document.createElement("td");
+          count.textContent = countData;
+
+          row.appendChild(count);
+          covidTable.appendChild(row);
+        });
+      }
     }
 
     return covidTable;
@@ -234,13 +270,24 @@ const displayManipulation = (() => {
     } else if (type == "supplier") {
       _display.innerHTML = `
       <div class='info-list-display'>
-        <h2 class="display-heading">Supplier</h2>
+        <h2 class="display-heading">Suppliers</h2>
       </div>
       `;
       const appendTo = document.querySelector(".info-list-display");
       for (element in data) {
         appendTo.appendChild(returnHeading(element));
         appendTo.appendChild(returnTable(data[element], "supplier", element));
+      }
+    } else if (type == "hospital") {
+      _display.innerHTML = `
+      <div class='info-list-display'>
+        <h2 class="display-heading">Hospitals</h2>
+      </div>
+      `;
+      const appendTo = document.querySelector(".info-list-display");
+      for (element in data) {
+        appendTo.appendChild(returnHeading(element));
+        appendTo.appendChild(returnTable(data[element], "hospital", element));
       }
     }
   };
@@ -254,7 +301,7 @@ const navigationHandler = (() => {
   const doctor = document.querySelector(".doctor-list");
   const medicalList = document.querySelector(".medical-equipment-list");
   const supplier = document.querySelector(".supplier-list");
-
+  const hospital = document.querySelector(".hospital");
   const doctorClick = async (e) => {
     const send = {
       type: "hospital-doctor-list",
@@ -303,11 +350,25 @@ const navigationHandler = (() => {
     const data = await response.json();
     displayManipulation.updateDisplay(data, "supplier");
   };
+
+  const hospitalClick = async (e) => {
+    const send = {
+      type: "hospital-list",
+    };
+    const response = await fetch("../get-data.php", {
+      body: JSON.stringify(send),
+      method: "POST",
+    });
+    const data = await response.json();
+    displayManipulation.updateDisplay(data, "hospital");
+  };
+
   const addListeners = () => {
     patient.addEventListener("click", patientClick);
     doctor.addEventListener("click", doctorClick);
     medicalList.addEventListener("click", equipmentClick);
     supplier.addEventListener("click", supplyClick);
+    hospital.addEventListener("click", hospitalClick);
   };
 
   return {
