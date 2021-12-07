@@ -18,6 +18,14 @@ const displayManipulation = (() => {
       heading.textContent = "Category with Patient Names";
     } else if (data == "medical-cat-count") {
       heading.textContent = "Category with Count";
+    } else if (data == "supply-ventilator") {
+      heading.textContent = "Supplying Ventilator";
+    } else if (data == "supply-name-mob") {
+      heading.textContent = "Name and mobile number";
+    } else if (data == "supply-oxygen") {
+      heading.textContent = "Suppling oxygen cylinders";
+    } else if (data == "supply-life-support") {
+      heading.textContent = "Supplying life support";
     }
     return heading;
   };
@@ -119,7 +127,6 @@ const displayManipulation = (() => {
           covidTable.appendChild(row);
         });
       } else {
-        console.log(data);
         covidTable.innerHTML = `
         <tr>
           <th> Equipment Category </th>
@@ -141,7 +148,51 @@ const displayManipulation = (() => {
           covidTable.appendChild(row);
         });
       }
+    } else if (type == "supplier") {
+      if (subType == "supply-ventilator") {
+        covidTable.innerHTML = `
+      <tr>
+        <th> Supplier Name </th>
+      </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const nameData = element["SNAME"];
+
+          const name = document.createElement("td");
+
+          name.textContent = nameData;
+          row.appendChild(name);
+
+          covidTable.appendChild(row);
+        });
+      } else if (
+        subType == "supply-name-mob" ||
+        subType == "supply-oxygen" ||
+        subType == "supply-life-support"
+      ) {
+        covidTable.innerHTML = `
+      <tr>
+        <th> Supplier Name </th>
+        <th> Supplier Mobile Number </th>
+      </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const nameData = element["SNAME"];
+          const phoneData = element["SMOB_NO"];
+
+          const name = document.createElement("td");
+          const phone = document.createElement("td");
+
+          name.textContent = nameData;
+          phone.textContent = phoneData;
+
+          row.appendChild(name);
+          row.appendChild(phone);
+          covidTable.appendChild(row);
+        });
+      }
     }
+
     return covidTable;
   };
   const updateDisplay = (data, type) => {
@@ -180,6 +231,17 @@ const displayManipulation = (() => {
           returnTable(data[element], "medical-equipment", element)
         );
       }
+    } else if (type == "supplier") {
+      _display.innerHTML = `
+      <div class='info-list-display'>
+        <h2 class="display-heading">Supplier</h2>
+      </div>
+      `;
+      const appendTo = document.querySelector(".info-list-display");
+      for (element in data) {
+        appendTo.appendChild(returnHeading(element));
+        appendTo.appendChild(returnTable(data[element], "supplier", element));
+      }
     }
   };
   return {
@@ -191,6 +253,7 @@ const navigationHandler = (() => {
   const patient = document.querySelector(".patient-list");
   const doctor = document.querySelector(".doctor-list");
   const medicalList = document.querySelector(".medical-equipment-list");
+  const supplier = document.querySelector(".supplier-list");
 
   const doctorClick = async (e) => {
     const send = {
@@ -228,10 +291,23 @@ const navigationHandler = (() => {
     const data = await response.json();
     displayManipulation.updateDisplay(data, "equipments");
   };
+
+  const supplyClick = async (e) => {
+    const send = {
+      type: "supplier-list",
+    };
+    const response = await fetch("../get-data.php", {
+      body: JSON.stringify(send),
+      method: "POST",
+    });
+    const data = await response.json();
+    displayManipulation.updateDisplay(data, "supplier");
+  };
   const addListeners = () => {
     patient.addEventListener("click", patientClick);
     doctor.addEventListener("click", doctorClick);
     medicalList.addEventListener("click", equipmentClick);
+    supplier.addEventListener("click", supplyClick);
   };
 
   return {

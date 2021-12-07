@@ -129,6 +129,44 @@
       "medical-cat-pname" => $response1,
       "medical-cat-count" => $response2
     );
+  } else if($type == "supplier-list"){
+    // 1 Supplying ventilators
+    $sql = "SELECT SNAME FROM 
+    supplier,supplier_supplies,medical_equipments  WHERE supplier.SID = supplier_supplies.SID and medical_equipments.EQID = supplier_supplies.EQID 
+    AND EQCATEGORY = \"VENTILATOR\"";
+    $result = $link -> query($sql);
+    $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 2 Display mobile no and name
+    $sql = "SELECT SNAME,SMOB_NO FROM supplier";
+    $result = $link -> query($sql);
+    $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 3 Display name and number of those supplying oxygen cylinder
+    $sql = "select SNAME,SMOB_NO from 
+    supplier,supplier_supplies,medical_equipments  
+    where supplier.sid = supplier_supplies.sid 
+    and medical_equipments.eqid = supplier_supplies.eqid 
+    and eqcategory = \"OXYGEN CYLINDER\"";
+    $result = $link -> query($sql);
+    $response3 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 4 Display those supplying life support
+    $sql = "select SNAME,SMOB_NO
+    from supplier,supplier_supplies,medical_equipments  where 
+    supplier.sid = supplier_supplies.sid
+     and medical_equipments.eqid = supplier_supplies.eqid 
+    and eqcategory = \"LIFE SUPPORT\"";
+    
+    $result = $link -> query($sql);
+    $response4 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $response = array(
+      "supply-ventilator" => $response1,
+      "supply-name-mob" => $response2,
+      "supply-oxygen" => $response3,
+      "supply-life-support" => $response4
+    );
   }
   echo json_encode($response);
 ?>
