@@ -44,19 +44,19 @@
     $response = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
   } else if($type == "hospital-patient-list"){
-    // 1
+    // 1 select those who are covid positive
     $sql = 'SELECT PFIRSTNAME,PLASTNAME FROM patient,medical_tests WHERE patient.PID = 
     medical_tests.PID  AND medical_tests.Diagnosis="COVID-19 Positive"';
     $result = $link -> query($sql);
     $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    // 2
+    // 2 select those who are from new delhi
     $sql = "SELECT PFIRSTNAME,PLASTNAME FROM patient
     WHERE patient.PADDRESS='New Delhi'";
     $result = $link -> query($sql);
     $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    // 3
+    // 3 select those who need ct scan
     $sql = 'SELECT PFIRSTNAME,PLASTNAME FROM patient, medical_tests
     WHERE patient.PID = medical_tests.PID
     AND medical_tests.DIAGNOSIS = "CT-SCAN NEEDED"';
@@ -67,6 +67,46 @@
       "19-positive" => $response1,
       "new-delhi" => $response2,
       "ct-scan" => $response3
+    );
+  } else if($type == "hospital-doctor-list"){
+    // 1 Select those with > 10 experience
+    $sql = "SELECT DFIRSTNAME,DLASTNAME,EXPERIENCE 
+    FROM doctor  
+    WHERE EXPERIENCE>10 ORDER BY EXPERIENCE DESC";
+    $result = $link -> query($sql);
+    $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 2 Those who did ct scan
+    $sql = "SELECT DFIRSTNAME,DLASTNAME 
+    FROM doctor,patient,medical_tests WHERE patient.PID = medical_tests.PID AND doctor.did=medical_tests.DID 
+    AND medical_tests.TEST_NAME=\"CT-SCAN\"";
+    $result = $link -> query($sql);
+    $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 3 doctors who performed RT PCR and belong to New Delhi
+    $sql = "select DFIRSTNAME,DLASTNAME from 
+    doctor,patient,medical_tests where 
+    patient.pid = medical_tests.pid 
+    and doctor.did=medical_tests.did and 
+    medical_tests.test_name=\"RT-PCR\"  
+    and paddress = \"New Delhi\"";
+    $result = $link -> query($sql);
+    $response3 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+    // 4 Doctors who performed CT Scan and belong to New Delhi
+    $sql = "select DFIRSTNAME, DLASTNAME 
+    from doctor, patient, medical_tests where 
+    patient.pid = medical_tests.pid and doctor.did = medical_tests.did and medical_tests.test_name=\"CT-SCAN\"
+    and paddress = \"New Delhi\"";
+    $result = $link -> query($sql);
+    $response4 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    $response = array(
+      "10-greater" => $response1,
+      "ct-scan" => $response2,
+      "rt-pcr" => $response3,
+      "ct-scan-delhi" => $response4
     );
   }
   echo json_encode($response);
