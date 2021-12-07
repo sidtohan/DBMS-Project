@@ -101,12 +101,33 @@
     and paddress = \"New Delhi\"";
     $result = $link -> query($sql);
     $response4 = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
+
     $response = array(
       "10-greater" => $response1,
       "ct-scan" => $response2,
       "rt-pcr" => $response3,
       "ct-scan-delhi" => $response4
+    );
+  } else if($type == "medical-equipment-list"){
+    // 1 Select all equipment with names of patients
+    $sql = "SELECT EQCATEGORY,PFIRSTNAME,PLASTNAME 
+    FROM medical_equipments,patient
+    WHERE patient.PID = medical_equipments.PID";
+    $result = $link -> query($sql);
+    $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    //2 Equipment category with their count
+    $sql = "select 
+    EQCATEGORY,count(medical_equipments.eqid) as EQUIP_COUNT from 
+    medical_equipments,supplier_supplies,supplier where 
+    medical_equipments.eqid = supplier_supplies.eqid 
+    and supplier.sid = supplier_supplies.sid group by(eqcategory)";
+    $result = $link -> query($sql, MYSQLI_ASSOC);
+    $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $response = array(
+      "medical-cat-pname" => $response1,
+      "medical-cat-count" => $response2
     );
   }
   echo json_encode($response);

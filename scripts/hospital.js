@@ -10,10 +10,14 @@ const displayManipulation = (() => {
       heading.textContent = "CT Scan";
     } else if (data == "10-greater") {
       heading.textContent = "Experience > 10";
-    } else if(data == "rt-pcr"){
-      heading.textContent = "RT PCR and New Delhi"
-    } else if(data == "ct-scan-delhi"){
-      heading.textContent = "CT Scan and New Delhi"
+    } else if (data == "rt-pcr") {
+      heading.textContent = "RT PCR and New Delhi";
+    } else if (data == "ct-scan-delhi") {
+      heading.textContent = "CT Scan and New Delhi";
+    } else if (data == "medical-cat-pname") {
+      heading.textContent = "Category with Patient Names";
+    } else if (data == "medical-cat-count") {
+      heading.textContent = "Category with Count";
     }
     return heading;
   };
@@ -65,8 +69,7 @@ const displayManipulation = (() => {
 
           covidTable.appendChild(row);
         });
-      } else{
-        console.log(data);
+      } else {
         covidTable.innerHTML = `
         <tr>
           <th> First Name </th>
@@ -87,8 +90,58 @@ const displayManipulation = (() => {
           covidTable.appendChild(row);
         });
       }
-    }
+    } else if (type == "medical-equipment") {
+      if (subType == "medical-cat-pname") {
+        covidTable.innerHTML = `
+        <tr>
+          <th> Equipment Category </th>
+          <th> First Name </th>
+          <th> Last Name </th>
+        </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const categoryData = element["EQCATEGORY"];
+          const firstNameData = element["PFIRSTNAME"];
+          const lastNameData = element["PLASTNAME"];
 
+          const firstName = document.createElement("td");
+          const lastName = document.createElement("td");
+          const category = document.createElement("td");
+
+          firstName.textContent = firstNameData;
+          lastName.textContent = lastNameData;
+          category.textContent = categoryData;
+
+          row.appendChild(category);
+          row.appendChild(firstName);
+          row.appendChild(lastName);
+
+          covidTable.appendChild(row);
+        });
+      } else {
+        console.log(data);
+        covidTable.innerHTML = `
+        <tr>
+          <th> Equipment Category </th>
+          <th> Count </th>
+        </tr>`;
+        data.forEach((element) => {
+          const row = document.createElement("tr");
+          const categoryData = element["EQCATEGORY"];
+          const countData = element["EQUIP_COUNT"];
+
+          const category = document.createElement("td");
+          const count = document.createElement("td");
+
+          category.textContent = categoryData;
+          count.textContent = countData;
+
+          row.appendChild(category);
+          row.appendChild(count);
+          covidTable.appendChild(row);
+        });
+      }
+    }
     return covidTable;
   };
   const updateDisplay = (data, type) => {
@@ -114,6 +167,19 @@ const displayManipulation = (() => {
         appendTo.appendChild(returnHeading(element));
         appendTo.appendChild(returnTable(data[element], "doctor", element));
       }
+    } else if (type == "equipments") {
+      _display.innerHTML = `
+      <div class='info-list-display'>
+        <h2 class="display-heading">Equipment</h2>
+      </div>
+      `;
+      const appendTo = document.querySelector(".info-list-display");
+      for (element in data) {
+        appendTo.appendChild(returnHeading(element));
+        appendTo.appendChild(
+          returnTable(data[element], "medical-equipment", element)
+        );
+      }
     }
   };
   return {
@@ -124,6 +190,8 @@ const displayManipulation = (() => {
 const navigationHandler = (() => {
   const patient = document.querySelector(".patient-list");
   const doctor = document.querySelector(".doctor-list");
+  const medicalList = document.querySelector(".medical-equipment-list");
+
   const doctorClick = async (e) => {
     const send = {
       type: "hospital-doctor-list",
@@ -136,6 +204,7 @@ const navigationHandler = (() => {
     console.log(data);
     displayManipulation.updateDisplay(data, "doctor");
   };
+
   const patientClick = async (e) => {
     const send = {
       type: "hospital-patient-list",
@@ -148,9 +217,21 @@ const navigationHandler = (() => {
     displayManipulation.updateDisplay(data, "patient");
   };
 
+  const equipmentClick = async (e) => {
+    const send = {
+      type: "medical-equipment-list",
+    };
+    const response = await fetch("../get-data.php", {
+      body: JSON.stringify(send),
+      method: "POST",
+    });
+    const data = await response.json();
+    displayManipulation.updateDisplay(data, "equipments");
+  };
   const addListeners = () => {
     patient.addEventListener("click", patientClick);
     doctor.addEventListener("click", doctorClick);
+    medicalList.addEventListener("click", equipmentClick);
   };
 
   return {
