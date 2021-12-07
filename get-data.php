@@ -42,6 +42,32 @@
     $sql = "SELECT * FROM medical_equipments WHERE PID = $id";
     $result = $link -> query($sql);
     $response = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+  } else if($type == "hospital-patient-list"){
+    // 1
+    $sql = 'SELECT PFIRSTNAME,PLASTNAME FROM patient,medical_tests WHERE patient.PID = 
+    medical_tests.PID  AND medical_tests.Diagnosis="COVID-19 Positive"';
+    $result = $link -> query($sql);
+    $response1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 2
+    $sql = "SELECT PFIRSTNAME,PLASTNAME FROM patient
+    WHERE patient.PADDRESS='New Delhi'";
+    $result = $link -> query($sql);
+    $response2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // 3
+    $sql = 'SELECT PFIRSTNAME,PLASTNAME FROM patient, medical_tests
+    WHERE patient.PID = medical_tests.PID
+    AND medical_tests.DIAGNOSIS = "CT-SCAN NEEDED"';
+    $result = $link -> query($sql);
+    $response3 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $response = array(
+      "19-positive" => $response1,
+      "new-delhi" => $response2,
+      "ct-scan" => $response3
+    );
   }
   echo json_encode($response);
 ?>
