@@ -1,4 +1,5 @@
 <?php
+  ini_set("display_errors",1);
   include_once "config.php";
   $type = $_POST["type"];
   $name = $_POST["name"];
@@ -20,7 +21,7 @@
       SID = $id and SName = '$name'";
     } else{
       $sql = "SELECT * FROM $type WHERE 
-      HID = $id and HName = '$name'";
+      HID = $id";
     }
 
     // running the query and storing the result
